@@ -1,13 +1,8 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as React from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { TextAndDescriptionContent } from '@/lib/TitleAndDescriptionContent';
 
-export interface TextAndDescriptionContent
-{
-    title: string;
-    text: string;
-    action?: string;
-}
 export default function TextAndDescription(props: TextAndDescriptionContent){
     const theme = useTheme();
     const isMd = useMediaQuery(theme.breakpoints.up('md'));

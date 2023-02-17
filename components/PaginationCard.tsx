@@ -23,10 +23,10 @@ export default function PaginationCard(props: Contenuti){
     
     return (
         <Stack direction="column" alignItems={'center'}>
-            <Pagination count={pages} color="primary" size='large' onChange={handleChange}/>
             {data.map(item => 
                 <BigElfoCard img={item.img} data={item.data} title={item.title} text={item.title} sx={{marginTop: 5}}></BigElfoCard>
             )}
+            <Pagination sx={{marginTop: 10}} count={pages} color="primary" size='large' onChange={handleChange}/>
         </Stack>
     );
 }

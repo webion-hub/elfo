@@ -30,11 +30,8 @@ export default function Home() {
       </Section>
       <Section>
           <Typography textAlign={'center'} variant="h2" component="h2">Notizie</Typography>
-          <Stack direction="column" alignItems={"center"} sx={{
-            '& > *': {
-              margin: 5,
-            },
-          }} paddingTop={10}  paddingBottom={10}>
+          <Stack direction="column" alignItems={"center"}  spacing={{xs: 1, sm: 3}} 
+          paddingTop={10}  paddingBottom={10}>
               {contentsBigCard.map((cb, i) =>
                 <BigElfoCard img={cb.img} data={cb.data} title={cb.title} text={cb.title}></BigElfoCard>
               )}

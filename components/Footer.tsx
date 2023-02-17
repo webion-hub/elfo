@@ -9,7 +9,8 @@ export const StyledFooter = styled('footer')(({ theme }) => ({
     width: '100%',
     backgroundColor: theme.palette.background.paper,
     height: '100%',
-    marginTop: 100
+    marginTop: 100,
+    paddingInline: 40
 }));
 
 export default function Footer(){

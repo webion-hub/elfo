@@ -2,6 +2,7 @@ import { Box, Paper, Stack } from "@mui/material";
 import Img from "./Img";
 import TitleAndDescription from "./TitleAndDescription";
 import { TextAndDescriptionContent } from '@/lib/TitleAndDescriptionContent';
+import { Section } from "./Section";
 
 
 

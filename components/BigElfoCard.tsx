@@ -15,7 +15,7 @@ export default function BigElfoCard(props: BigElfoCardProps)
 			component={Card}
 			direction={{ xs: 'column', md: 'row' }}
 			sx={{
-				maxWidth: "70%",
+				maxWidth: "800px",
 				width: "100%",
 				borderRadius: '2%',
 				...props.sx
