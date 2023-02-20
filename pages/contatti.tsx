@@ -1,12 +1,12 @@
-import ContactUs from '@/components/ContactUs'
-import Form from '@/components/Form'
-import { Section } from '@/components/Section'
+import ContactUs from '@/lib/components/ContactUs'
+import Form from '@/lib/components/Form'
+import { Section } from '@/lib/components/Section'
 
 
 export default function Contatti() {
-  return (
-       <Section>
-            <ContactUs></ContactUs>
-        </Section>
-  )
+	return (
+		<Section>
+			<ContactUs></ContactUs>
+		</Section>
+	)
 }

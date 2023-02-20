@@ -1,15 +1,13 @@
-import PaginationCard from '@/components/PaginationCard'
-import { Section } from '@/components/Section'
-import { contentNotizie, contentsBigCard } from '@/lib/ContentBigElfoCard'
+import PaginationCard from '@/lib/components/PaginationCard'
+import { Section } from '@/lib/components/Section'
+import { contentNotizie } from '@/lib/components/ContentsNotizie'
 
-
-contentNotizie
 
 export default function Notizie() {
-  return (
+	return (
 
-      <Section>
-        <PaginationCard count={Math.ceil(contentNotizie.length / 10)}></PaginationCard>
-      </Section>
-  )
+		<Section>
+			<PaginationCard count={Math.ceil(contentNotizie.length / 10)}></PaginationCard>
+		</Section>
+	)
 }

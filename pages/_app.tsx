@@ -1,12 +1,12 @@
 import { createTheme, GlobalStyles, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
-import ResponsiveAppBar from '@/components/ResponsiveAppBar'
-import Footer from '@/components/Footer';
+import ResponsiveAppBar from '@/lib/components/ResponsiveAppBar'
+import Footer from '@/lib/components/Footer';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#DC143C',
+      main: '#196BA8',
       contrastText: '#fff'
     },
     info: {

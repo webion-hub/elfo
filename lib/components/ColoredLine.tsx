@@ -1,7 +1,7 @@
 
 interface ColorColoredLine
 {
-    color: string;
+    readonly color: string;
 }
 export default function ColoredLine(props: ColorColoredLine)
 {

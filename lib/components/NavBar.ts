@@ -30,4 +30,13 @@ export const navBarContents : NavBar[] =
         name: 'Quaderno',
         path: 'quaderno'
     },
+    {
+        name: 'Progetti in atto',
+        path: 'progettiInAtto'
+    },
+    {
+        name: 'Progetti realizzati',
+        path: 'progettiRealizzati'
+    }
+
 ]
