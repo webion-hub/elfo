@@ -9,7 +9,7 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
     <Card>
       <CardMedia
         component="img"
-        height="350"
+        height="300"
         image={props.img}
         alt="green iguana"
       >
@@ -21,7 +21,7 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
         <Typography
           gutterBottom
           variant="h5"
-          component="div"
+          component="h3"
         >
           {props.title}
         </Typography>

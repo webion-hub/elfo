@@ -15,7 +15,14 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
 				width: '100%'
 			}}
 		>
-			<AllSection data={props.data} img={props.img} title={props.title} text={props.text} action={props.action} path={props.path} />
+			<AllSection
+				data={props.data}
+				img={props.img}
+				title={props.title}
+				text={props.text}
+				action={props.action}
+				path={props.path}
+			/>
 
 			<Stack
 				sx={{
@@ -36,7 +43,10 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
 				}}
 			>
 				{props.i!.map((item) => (
-					<ImageCard path={item.path} alt={item.alt} ></ImageCard>
+					<ImageCard
+						path={item.path}
+						alt={item.alt}
+					></ImageCard>
 				))}
 			</Stack>
 		</Stack>

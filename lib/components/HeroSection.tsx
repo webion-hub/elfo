@@ -20,6 +20,7 @@ export default function HeroSection() {
 				title="Adozioni a distanza e progetti di aiuto e sostegno"
 				text='Siamo convinti che "Se cresce la cultura, cresce la pace", per questo la nostra associazione no-profit sostiene gli studi e cerca di migliorare le vite dei piu sfortunati.'
 				action="Dona"
+				path="/sostienici"
 			/>
 			<Paper
 				sx={{
@@ -27,7 +28,11 @@ export default function HeroSection() {
 					position: 'relative',
 					width: '100%',
 					marginTop: 10,
-					borderRadius: '2%'
+					borderRadius: '2%',
+					marginLeft: {
+						xs: 0,
+						md: 5
+					}
 				}} >
 				<Img
 					src="/assets/images/image 2.png"

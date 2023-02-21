@@ -17,7 +17,7 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 				md: 'row'
 			}}
 			sx={{
-				maxWidth: "800px",
+				maxWidth: "100%",
 				width: "100%",
 				borderRadius: '2%',
 				...props.sx
@@ -51,8 +51,7 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 					<Typography
 						gutterBottom
 						variant="h5"
-						component="div"
-						fontSize={40}
+						component="h3"
 					>
 						{props.title}
 					</Typography>

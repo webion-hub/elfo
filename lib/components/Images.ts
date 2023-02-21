@@ -1,6 +1,5 @@
-export interface Images
-{
-    path: string;
-    alt: string;
+export interface Images {
+	path: string;
+	alt: string;
 }
 

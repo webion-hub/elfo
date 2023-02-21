@@ -5,6 +5,7 @@ import { Section } from '@/lib/components/Section'
 import { contentsBigCard } from '@/lib/components/ContentsBigEfloCard'
 import { contentCard } from '@/lib/components/ContentsCard'
 import { Box, Button, Stack, Typography } from '@mui/material'
+import SideBar from '@/lib/components/SideBar'
 
 
 export default function Home() {
@@ -37,25 +38,52 @@ export default function Home() {
 					Notizie
 				</Typography>
 				<Stack
-					direction="column"
-					alignItems={"center"}
-					spacing={{
-						xs: 1,
-						sm: 3
-					}}
-					paddingTop={10}
-					paddingBottom={10}>
-					{contentsBigCard.map((cb, i) =>
-						<BigElfoCard
-							img={cb.img}
-							data={cb.data}
-							title={cb.title}
-							text={cb.title}
-						/>
+					flexDirection={'row'}>
+					<Stack
+						direction="column"
+						alignItems={"center"}
 
-					)}
-					<Button sx={{ border: "1px solid" }}>leggi le altre notizie</Button>
+						sx={{
+							marginRight: {
+								xs: 0,
+								md: 5
+							},
+							width: '100%'
+						}}
+
+						spacing={{
+							xs: 1,
+							sm: 3
+						}}
+						paddingTop={10}
+						paddingBottom={10}>
+						{contentsBigCard.map((cb, i) =>
+							<BigElfoCard
+								img={cb.img}
+								data={cb.data}
+								title={cb.title}
+								text={cb.title}
+							/>
+
+						)}
+					</Stack>
+					<SideBar></SideBar>
 				</Stack>
+				<Box
+					width="100%"
+					sx={{
+						display: 'flex',
+						justifyContent: 'center'
+					}}
+				>
+
+					<Button
+						variant="contained"
+						sx={{ border: "1px solid" }}
+					>
+						leggi le altre notizie
+					</Button>
+				</Box>
 			</Section>
 			<Section>
 				<Typography
@@ -74,7 +102,7 @@ export default function Home() {
 					sx={{
 						"& > *": {
 							maxWidth: 330,
-							margin: 3
+							margin: 2,
 						}
 					}}>
 					{contentCard.map((c, i) =>

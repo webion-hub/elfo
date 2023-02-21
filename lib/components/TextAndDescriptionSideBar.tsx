@@ -4,7 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { TitleAndDescriptionContent } from '@/lib/components/TitleAndDescriptionContent';
 import { useNextNavigator } from '@/hooks/useNextNavigator';
 
-export default function TitleAndDescription(props: TitleAndDescriptionContent) {
+export default function TextAndDescriptionSideBar(props: TitleAndDescriptionContent) {
 	const theme = useTheme();
 	const isMd = useMediaQuery(theme.breakpoints.up('md'));
 	const { clickNavigate } = useNextNavigator();
@@ -12,7 +12,7 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 
 	return (
 		<Stack
-			margin="auto"
+			marginLeft="5px"
 			sx={{
 				'& > *': {
 					marginBottom: {
@@ -22,28 +22,26 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 				},
 				width: {
 					xs: '100%',
-					md: '80%'
+					md: '100%'
 				}
 			}}>
-			{props.data ? <Chip variant="outlined" label={props.data!} /> : null}
+			{props.data ? <><Chip variant="outlined" sx={{ width: '60%' }} size="small" label={props.data!} /></>: null}
 			<Typography
 				variant={isMd ? 'h2' : 'h3'}
-				component='h1'
-				sx={{ marginTop: theme => theme.mixins.toolbar.minHeight + 'px' }}
+				component='h3'
+				fontSize="11pt"
 			>
 				{props.title}
 			</Typography>
 			<Typography
 				variant='subtitle1'
 				component='p'
+				fontSize="10pt"
+				
 			>
 				{props.text}
 			</Typography>
-			{(props.action != null && props.path != null)  ? <Button endIcon={<FavoriteIcon />} color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
+			{(props.action != null && props.path != null) ? <Button endIcon={<FavoriteIcon />} color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
 		</Stack>
 	);
 }
-
-
-
-// }

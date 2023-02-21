@@ -22,7 +22,10 @@ export default function PaginationCard(props: Contenuti) {
 	}
 
 	return (
-		<Stack direction="column" alignItems={'center'}>
+		<Stack
+			direction="column"
+			alignItems={'center'}
+		>
 			{data.map(item =>
 				<BigElfoCard
 					img={item.img}

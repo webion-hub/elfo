@@ -20,11 +20,9 @@ export default function Calendar() {
 				alignItems={"center"}
 				sx={{
 					'& > *': {
-						margin: 5,
+						marginTop: 5,
 					},
-				}}
-				paddingTop={3}
-				paddingBottom={3}>
+				}}>
 				{calendar.map((cb, i) =>
 					<BigElfoCard
 						img={cb.img}

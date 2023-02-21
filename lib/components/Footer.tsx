@@ -40,7 +40,7 @@ export default function Footer() {
 				<Link></Link>
 				<Social></Social>
 			</Stack>
-			<ColoredLine color="blue" />
+			<ColoredLine color="#196BA8" />
 			<Typography
 				variant="subtitle1"
 				component="p"

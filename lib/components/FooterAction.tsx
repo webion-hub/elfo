@@ -47,7 +47,7 @@ export default function FooterAction(props: ContentFooterAction) {
 					alt="logo2"
 					fill
 					onClick={clickNavigate("/sostienici")}
-					sx={{ objectFit: "contain" }} />
+					sx={{ objectFit: "contain", cursor: "pointer"}} />
 			</Box>
 		</Stack>
 	);

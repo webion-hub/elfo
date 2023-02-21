@@ -137,7 +137,10 @@ export default function DrawerAppBar(props: Props) {
 								alt="logo"
 								fill
 								onClick={clickNavigate("/")}
-								sx={{ objectFit: "contain" }}
+								sx={{
+									objectFit: "contain",
+									cursor: "pointer"
+								}}
 							/>
 						</Box>
 

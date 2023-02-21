@@ -3,24 +3,25 @@ import Img from "./Img";
 import TitleAndDescription from "./TitleAndDescription";
 import { TitleAndDescriptionContent } from '@/lib/components/TitleAndDescriptionContent';
 import { Section } from "./Section";
+import TextAndDescriptionBacheca from "./TextAndDescriptionBacheca";
 
 
 
-export default function AllSection(props: Partial<TitleAndDescriptionContent>) {
+export default function SectionBacheca(props: Partial<TitleAndDescriptionContent>) {
 	return (
-			<Stack
-				sx={{
-					flexDirection: {
-						xs: 'column-reverse',
-						md: 'row'
-					},
-					maxWidth: '100%',
-					width: '100%',
-					height: '100%',
-				}}>
+		<Stack
+			sx={{
+				flexDirection: {
+					xs: 'column-reverse',
+					md: 'row'
+				},
+				width: '100%',
+				height: '100%',
+			}}>
+			{props.img ?
 				<Paper
 					sx={{
-						height: '500px',
+						height: '300px',
 						position: 'relative',
 						width: {
 							xs: '100%',
@@ -32,20 +33,18 @@ export default function AllSection(props: Partial<TitleAndDescriptionContent>) {
 					}} >
 					<Img
 						src={props.img!}
-						alt={props.title ?? ''}
+						alt={props.title!}
 						fill
 						sx={{
 							objectFit: "cover",
 							borderRadius: '2%'
 						}} />
-				</Paper>
-				<TitleAndDescription
-					data = {props.data}
-					title={props.title ?? ''}
-					text={props.text ?? ''}
-					action={props.action!}
-					path={props.path!}
-				/>
-			</Stack>
+				</Paper> : null
+			}
+			<TextAndDescriptionBacheca
+				title={props.title ?? ''}
+				text={props.text ?? ''}
+			/>
+		</Stack>
 	);
 }
