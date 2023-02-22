@@ -1,11 +1,11 @@
-import BigElfoCard from '@/lib/components/BigElfoCard'
-import ElfoCard from '@/lib/components/ElfoCard'
-import HeroSection from '@/lib/components/HeroSection'
-import { Section } from '@/lib/components/Section'
-import { contentsBigCard } from '@/lib/components/ContentsBigEfloCard'
-import { contentCard } from '@/lib/components/ContentsCard'
+import BigElfoCard from '@/lib/components/cards/BigElfoCard/BigElfoCard'
+import ElfoCard from '@/lib/components/cards/ElfoCard/ElfoCard'
+import HeroSection from '@/lib/components/sections/HeroSection'
+import { Section } from '@/lib/components/layout/Section'
+import { contentsBigCard } from '@/lib/components/cards/BigElfoCard/ContentsBigEfloCard'
+import { contentCard } from '@/lib/components/cards/ElfoCard/ContentsCard'
 import { Box, Button, Stack, Typography } from '@mui/material'
-import SideBar from '@/lib/components/SideBar'
+import SideBar from '@/lib/components/layout/sideBar/SideBar'
 
 
 export default function Home() {
@@ -59,10 +59,11 @@ export default function Home() {
 						paddingBottom={10}>
 						{contentsBigCard.map((cb, i) =>
 							<BigElfoCard
+								key={i}
 								img={cb.img}
 								data={cb.data}
 								title={cb.title}
-								text={cb.title}
+								text={cb.text}
 							/>
 
 						)}
@@ -107,6 +108,7 @@ export default function Home() {
 					}}>
 					{contentCard.map((c, i) =>
 						<ElfoCard
+							key={i}
 							img={c.img}
 							title={c.title}
 							text={c.text}

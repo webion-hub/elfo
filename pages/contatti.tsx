@@ -1,6 +1,5 @@
-import ContactUs from '@/lib/components/ContactUs'
-import Form from '@/lib/components/Form'
-import { Section } from '@/lib/components/Section'
+import ContactUs from '@/lib/components/sections/contact/ContactUs'
+import { Section } from '@/lib/components/layout/Section'
 
 
 export default function Contatti() {

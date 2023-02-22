@@ -1,5 +1,5 @@
-import TabsAndTable from '@/lib/components/TabsAndTable'
-import { Section } from '@/lib/components/Section'
+import TabsAndTable from '@/lib/components/sections/table/TabsAndTable'
+import { Section } from '@/lib/components/layout/Section'
 
 
 export default function Quaderno() {

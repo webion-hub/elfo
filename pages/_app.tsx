@@ -1,7 +1,8 @@
 import { createTheme, GlobalStyles, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
-import ResponsiveAppBar from '@/lib/components/ResponsiveAppBar'
-import Footer from '@/lib/components/Footer';
+import ResponsiveAppBar from '@/lib/components/layout/appBar/ResponsiveAppBar'
+import Footer from '@/lib/components/layout/footer/Footer';
+import Head from 'next/head';
 
 const theme = createTheme({
   palette: {
@@ -31,6 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         }}
       />
+      <Head>
+        <title>Elfoavventure</title>
+      </Head>
       <ResponsiveAppBar/>
       <Component {...pageProps} />
       <Footer></Footer>

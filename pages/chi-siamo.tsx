@@ -1,7 +1,6 @@
-import AllSection from "@/lib/components/AllSection";
-import PageDetails from "@/lib/components/PageDetails";
-import { Section } from "@/lib/components/Section";
-import { immagini } from "@/lib/components/contentsImages";
+import PageDetails from "@/lib/components/sections/PageDetails";
+import { Section } from "@/lib/components/layout/Section";
+
 
 
 export default function ChiSiamo() {
@@ -17,7 +16,6 @@ export default function ChiSiamo() {
 				malesuada lacus ex, sit amet blandit leo lobortis eget."
 				action="dona"
 				path="/bacheca"
-				i={immagini}
 			/>
 		</Section>
 	);
