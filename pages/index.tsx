@@ -6,9 +6,13 @@ import { contentsBigCard } from '@/lib/components/cards/BigElfoCard/ContentsBigE
 import { contentCard } from '@/lib/components/cards/ElfoCard/ContentsCard'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import SideBar from '@/lib/components/layout/sideBar/SideBar'
+import { useEffect } from 'react'
+import CardSlider from '@/lib/components/other/CardSlider'
+
 
 
 export default function Home() {
+	
 	return (
 		<>
 			<Section
@@ -80,7 +84,17 @@ export default function Home() {
 
 					<Button
 						variant="contained"
-						sx={{ border: "1px solid" }}
+						sx={{ 
+							border: "0px" ,
+							transition: "0.3s",
+							"&:hover":
+							{
+								backgroundColor: 'blue',
+								boxShadow: theme => ({
+									xs: 'none',
+									lg: theme.shadows[10]})
+							}
+					}}
 					>
 						leggi le altre notizie
 					</Button>
@@ -115,6 +129,18 @@ export default function Home() {
 						/>
 					)}
 				</Stack>
+			</Section>
+			<Section>
+				<Typography
+						textAlign={'center'}
+						variant="h2"
+						component="h2"
+						paddingTop={10}
+						paddingBottom={10}
+					>
+						Siti amici
+					</Typography>
+				<CardSlider></CardSlider>
 			</Section>
 		</>
 	)

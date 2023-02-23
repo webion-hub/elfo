@@ -1,5 +1,5 @@
 import { Paper, Stack } from "@mui/material";
-import Img from "../../image/Img";
+import Img from "../../images/Img";
 import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent';
 import TextAndDescriptionBacheca from "../../descriptions/TextAndDescriptionBacheca";
 

@@ -7,18 +7,51 @@ import Head from 'next/head';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#196BA8',
+      main: 'rgb(37 99 235)',
       contrastText: '#fff'
+    },
+    secondary:
+    {
+      main: "#fff",
+      contrastText: 'black'
     },
     info: {
       main: '#646377'
     },
     background: {
       default: '#fff',
-      paper: '#F4FCFE'
+      paper: '#F4FCFE',
     }
 
     
+  },
+
+
+  typography: {
+    fontFamily: [
+      'ui-sans-serif',
+      'system-ui',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      '"Noto Sans"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      '"Noto Color Emoji"'
+
+    ].join(','),
+    h2: {
+      fontWeight: "bold"
+    },
+    h5: {
+      fontWeight: "bold"
+    }
+   
   }
 });
 
@@ -28,8 +61,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <GlobalStyles 
         styles={{
           "body": {
-            background: theme.palette.background.default
-          }
+            background: theme.palette.background.default,
+            fontFamily: theme.typography.fontFamily
+          },
+          
+
         }}
       />
       <Head>

@@ -20,5 +20,17 @@ export const contentCard: TitleAndDescriptionContent[] =
 			title: 'aiuti per due bambine dello zambia3',
 			text: 'ciao3',
 			data: '20 maggio 2022'
-		}
+		},
+		{
+			img: 'https://www.elfoavventure.it/imm_pag/3/ico_IMG-20230203-WA0003.jpg',
+			title: 'aiuti per due bambine dello zambia3',
+			text: 'ciao3',
+			data: '20 maggio 2022'
+		},
+		{
+			img: 'https://www.elfoavventure.it/imm_pag/3/ico_IMG-20230203-WA0003.jpg',
+			title: 'aiuti per due bambine dello zambia3',
+			text: 'ciao3',
+			data: '20 maggio 2022'
+		},
 	]

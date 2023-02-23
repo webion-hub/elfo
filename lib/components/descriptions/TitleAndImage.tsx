@@ -1,6 +1,6 @@
 import { Paper, Stack, Typography } from "@mui/material";
-import { Images } from "../image/Images";
-import Img from "../image/Img";
+import { Images } from "../images/Images";
+import Img from "../images/Img";
 
 
 

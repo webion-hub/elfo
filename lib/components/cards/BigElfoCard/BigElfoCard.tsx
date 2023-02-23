@@ -2,6 +2,7 @@
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, Chip, Stack, SxProps, Theme } from "@mui/material";
 
+
 interface BigElfoCardProps extends TitleAndDescriptionContent {
 	readonly sx?: SxProps<Theme>
 }
@@ -51,6 +52,7 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 						gutterBottom
 						variant="h5"
 						component="h2"
+
 					>
 						{props.title}
 					</Typography>
@@ -67,6 +69,16 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 						size="small"
 						color="primary"
 						variant="contained"
+						sx={{
+							transition: "0.3s",
+							"&:hover":
+							{
+								backgroundColor: 'blue',
+								boxShadow: theme => ({
+									xs: 'none',
+									lg: theme.shadows[10]})
+							}
+						}}
 					>
 						scopri di più
 					</Button>

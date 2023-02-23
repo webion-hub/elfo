@@ -17,7 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import { useState } from 'react';
-import Img from '../../image/Img';
+import Img from '../../images/Img';
 
 
 
@@ -145,18 +145,39 @@ export default function DrawerAppBar(props: Props) {
 						</Box>
 
 						<Stack
+							
 							sx={{
 								display: {
 									xs: 'none',
 									md: 'block'
+								},
+								'& > *':
+								{
+									marginRight: '3px'
 								}
-							}}>
+							}} >
 							{navBarContents.slice(0, 6).map((item, i) => (
 								<Button
 									key={item.name}
 									color="info"
 									href={item.path}
+									sx={{
+										"&:after": {
+											content: "''",
+											position: "absolute",
+											backgroundColor: 'rgb(37 99 235)',
+											height: '3px',
+											width: 0,
+											left: 0,
+											bottom: '-5px',
+											transition: '0.3s'
+										},
+										"&:hover:after": {
+											width: '100%'
+										}
+									}}
 									onClick={clickNavigate(item.path)}
+									
 								>
 									{item.name}
 								</Button>
@@ -213,6 +234,14 @@ export default function DrawerAppBar(props: Props) {
 								display: {
 									xs: 'none',
 									md: 'flex'
+								},
+								transition: "0.3s",
+								"&:hover":
+								{
+									backgroundColor: 'blue',
+									boxShadow: theme => ({
+										xs: 'none',
+										lg: theme.shadows[10]})
 								}
 							}}
 						>

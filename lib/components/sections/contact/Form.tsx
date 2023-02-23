@@ -35,7 +35,16 @@ export default function Form() {
 					size='small'
 					variant='contained'
 					sx={{
-						marginTop: 3
+						marginTop: 3,
+						transition: "0.3s",
+						"&:hover":
+						{
+							backgroundColor: 'blue',
+							boxShadow: theme => ({
+								xs: 'none',
+								lg: theme.shadows[10]
+							})
+						}
 					}}
 				>
 					Invia

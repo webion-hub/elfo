@@ -1,0 +1,17 @@
+
+
+
+.ResponsiveAppBar button:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(37 99 235);
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.ResponsiveAppBar button:hover:after{
+    width: 100%;
+}

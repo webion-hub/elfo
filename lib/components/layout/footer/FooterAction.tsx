@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import Img from "../../image/Img";
+import Img from "../../images/Img";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useNextNavigator } from "@/hooks/useNextNavigator";
 
@@ -33,6 +33,16 @@ export default function FooterAction(props: ContentFooterAction) {
 				variant="contained"
 				size='small'
 				endIcon={<FavoriteIcon />}
+				sx={{
+					transition: "0.3s",
+					"&:hover":
+					{
+						backgroundColor: 'blue',
+						boxShadow: theme => ({
+						xs: 'none',
+						lg: theme.shadows[10]})
+					}
+				}}
 			>
 				Dona
 			</Button>

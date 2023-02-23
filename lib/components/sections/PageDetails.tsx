@@ -2,7 +2,7 @@
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import {Stack } from "@mui/material";
 import AllSection from "./AllSection";
-import SlideShow from "../image/SlideShow";
+import SlideShow from "../images/SlideShow";
 
 
 export default function PageDetails(props: TitleAndDescriptionContent) {

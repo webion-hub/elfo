@@ -1,4 +1,4 @@
-import { Images } from "@/lib/components/image/Images";
+import { Images } from "@/lib/components/images/Images";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 

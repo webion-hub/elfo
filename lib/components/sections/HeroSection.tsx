@@ -1,6 +1,6 @@
 import { Paper, Stack } from '@mui/material';
 import * as React from 'react';
-import Img from '../image/Img';
+import Img from '../images/Img';
 import TitleAndDescription from '../descriptions/TitleAndDescription';
 
 

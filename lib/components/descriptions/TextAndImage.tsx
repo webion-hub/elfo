@@ -1,5 +1,5 @@
 import { Paper, Stack, Typography } from "@mui/material";
-import Img from "../image/Img";
+import Img from "../images/Img";
 import TextAndDescriptionSideBar from "./TextAndDescriptionSideBar";
 import { TitleAndDescriptionContent } from "./TitleAndDescriptionContent";
 

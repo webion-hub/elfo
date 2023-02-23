@@ -45,8 +45,11 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 			>
 				{props.text}
 			</Typography>
-			{(props.action != null && props.path != null)  ? <Button endIcon={<FavoriteIcon />} sx={{width: '200px'}}color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
+			{(props.action != null && props.path != null)  ? <Button endIcon={<FavoriteIcon />} sx={{ transition:"0.3s", "&:hover": {backgroundColor: 'blue', boxShadow: theme => ({
+							xs: 'none',
+							lg: theme.shadows[10]})}, width: '110px', height: "40px"}} color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
 		</Stack>
 	);
 }
+
 

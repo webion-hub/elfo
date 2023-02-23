@@ -1,4 +1,4 @@
-import { Images } from "../image/Images";
+import { Images } from "../images/Images";
 
 
 export interface TitleAndDescriptionContent {

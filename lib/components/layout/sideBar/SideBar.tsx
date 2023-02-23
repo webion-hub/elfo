@@ -1,6 +1,6 @@
 import { Paper, Stack, Typography } from "@mui/material";
 import ColoredLine from "../../other/ColoredLine";
-import Img from "../../image/Img";
+import Img from "../../images/Img";
 
 import { contentsSideBar } from "../sideBar/ContentSideBar";
 import TextAndImage from "../../descriptions/TextAndImage";
