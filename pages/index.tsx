@@ -8,11 +8,30 @@ import { Box, Button, Stack, Typography } from '@mui/material'
 import SideBar from '@/lib/components/layout/sideBar/SideBar'
 import { useEffect } from 'react'
 import CardSlider from '@/lib/components/other/CardSlider'
+import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent'
 
+
+export const changeText = (array1: TitleAndDescriptionContent[], array2: TitleAndDescriptionContent[]) => {
+	let i : number;
+	for(i= 0; i < array2.length; i++){
+		array1[i] = {...array2[i]};
+		
+		if(array1[i].text.length > 150)
+			array1[i].text = array1[i].text.substring(0, 150) + "...";
+		
+	}
+}
 
 
 export default function Home() {
-	
+	const arr : TitleAndDescriptionContent[] = [];
+	const arr2 : TitleAndDescriptionContent[] = []
+
+
+
+	changeText(arr, contentsBigCard)
+	changeText(arr2, contentCard)
+
 	return (
 		<>
 			<Section
@@ -61,7 +80,7 @@ export default function Home() {
 						}}
 						paddingTop={10}
 						paddingBottom={10}>
-						{contentsBigCard.map((cb, i) =>
+						{arr.map((cb, i) =>
 							<BigElfoCard
 								key={i}
 								img={cb.img}
@@ -85,6 +104,7 @@ export default function Home() {
 					<Button
 						variant="contained"
 						sx={{ 
+							padding: 1.5,
 							border: "0px" ,
 							transition: "0.3s",
 							"&:hover":
@@ -120,7 +140,7 @@ export default function Home() {
 							margin: 2,
 						}
 					}}>
-					{contentCard.map((c, i) =>
+					{arr2.map((c, i) =>
 						<ElfoCard
 							key={i}
 							img={c.img}

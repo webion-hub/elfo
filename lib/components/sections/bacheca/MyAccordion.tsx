@@ -10,20 +10,20 @@ export default function MyAccordion() {
 		{
 			label: 'Biglietto teatrale',
 			key: 'ticket',
-			description: 'fdnbf',
-			img: '/assets/images/image3.jpg'
+			description: "Biglietto teatrale a scelta fra le tre date proposte a TeatrAMO 2023: * 04 Marzo: IL TEATRO DI CARTA* 18 Marzo: LA VERITA' DI FREUD * 25 Marzo: LA BANDA DEGLI ONESTI gli spettacoli si terranno al Teatro Troisi di Nonantola alle ore 21.00.I posti sono numerati. Il costo del biglietto è € 10,00 e potete prenotarli al nr. 335-5881505 anche con messagggio whatsapp.",
+			img: 'https://www.elfoavventure.it/imm_art/9/IMG-20211204-WA0008.jpg'
 		},
 		{
 			label: 'Il compagno Don Camillo',
 			key: 'compagno',
-			description: 'fdnbf',
+			description: '',
 			img: '/assets/images/image3.jpg'
 		},
 		{
 			label: 'Bomboniera a scatola traforata ',
 			key: 'bomboniera',
-			description: 'fdnbf',
-			img: '/assets/images/image3.jpg'
+			description: 'Bomboniera a scatolina in cartoncino leggero traforata con decorazioni, pergamena personalizzata, nastrino in tinta con pergamena (beige o rosa o azzurra), confetti bianchi o in tonalità sfumate colorate come nastro.',
+			img: 'https://www.elfoavventure.it/imm_art/2/Bomboniera_C.jpg'
 		},
 		{
 			label: 'Bomboniera a scatola',
@@ -44,10 +44,10 @@ export default function MyAccordion() {
 			img: '/assets/images/image3.jpg'
 		},
 		{
-			label: 'Da il decadimento',
-			key: 'decadimento',
-			description: 'fdnbf',
-			img: '/assets/images/image3.jpg'
+			label: 'Da il decamerino',
+			key: 'decamerino',
+			description: "",
+			img: 'https://www.elfoavventure.it/imm_art/10/kkkk.jpg'
 		},
 		{
 			label: 'Da domani sarò triste, oggi no',
@@ -56,10 +56,10 @@ export default function MyAccordion() {
 			img: '/assets/images/image3.jpg'
 		},
 		{
-			label: 'Il lupo della steppa',
-			key: 'lupo',
-			description: 'fdnbf',
-			img: '/assets/images/image3.jpg'
+			label: 'Un Amore Senza Frontiere',
+			key: 'amore',
+			description: 'La storia di un uomo eccezionale. Padre Pedro di Manantenasoa. Episodi della sua avventurosa vita in Madagascar attraverso le esperienze di un giovane viaggiatore. Libro molto difficile da trovare in libreria. Si può provare ordinandolo alla casa editrice stessa',
+			img: 'https://www.elfoavventure.it/imm_art/1/LibroPedro.jpg'
 		},
 		{
 			label: 'Le colline del coraggio',

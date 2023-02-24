@@ -19,12 +19,9 @@ export default function SectionBacheca(props: Partial<TitleAndDescriptionContent
 			{props.img ?
 				<Paper
 					sx={{
-						height: '300px',
+						height: '400px',
 						position: 'relative',
-						width: {
-							xs: '100%',
-							md: '60%'
-						},
+						width: '100%',
 						marginTop: 10,
 						borderRadius: '2%',
 						marginRight: 10

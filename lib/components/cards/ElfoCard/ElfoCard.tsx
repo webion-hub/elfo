@@ -12,7 +12,7 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
 	return (
 		<Card
 			sx={{
-				borderRadius: '0%',
+				borderRadius: "20px",
 				'& > *':
 				{
 					backgroundColor: theme.palette.background.default
@@ -27,7 +27,7 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
 						},
 						boxShadow: theme => ({
 							xs: 'none',
-							lg: theme.shadows[20]})
+							lg: theme.shadows[10]})
 
 				}
 			}}>
@@ -35,11 +35,14 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
 				component="img"
 				height="300"
 				image={props.img}
-				alt="green iguana"
+				alt={props.title}
 			>
 			</CardMedia>
 			<CardContent sx={{
-				height: 160,
+				height: {
+					xs: 'fit-content',
+					md: 160
+				},
 				overflow: "hidden",
 
 			}}>
@@ -62,7 +65,6 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
 					size="small"
 					variant="text"
 					color="inherit"
-
 				>
 					Scopri di più
 					<ArrowForwardIcon fontSize="small" />

@@ -2,6 +2,7 @@ import { Paper, Stack } from "@mui/material";
 import Img from "../images/Img";
 import TitleAndDescription from "../descriptions/TitleAndDescription";
 import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent';
+import { NextImg } from "../other/NextImg";
 
 
 
@@ -30,7 +31,7 @@ export default function AllSection(props: Partial<TitleAndDescriptionContent>) {
 					borderRadius: '2%',
 					marginRight: 10
 				}} >
-				<Img
+				<NextImg
 					src={props.img!}
 					alt={props.title ?? ''}
 					fill

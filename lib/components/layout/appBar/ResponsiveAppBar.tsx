@@ -18,6 +18,7 @@ import Toolbar from '@mui/material/Toolbar';
 import * as React from 'react';
 import { useState } from 'react';
 import Img from '../../images/Img';
+import { NextImg } from '../../other/NextImg';
 
 
 
@@ -132,9 +133,12 @@ export default function DrawerAppBar(props: Props) {
 							height={72}
 							position="relative"
 						>
-							<Img
+							<NextImg
 								src="/assets/images/elfoavventure.png"
 								alt="logo"
+								skeletonSx={{
+									borderRadius: 2
+								}}
 								fill
 								onClick={clickNavigate("/")}
 								sx={{
@@ -235,6 +239,7 @@ export default function DrawerAppBar(props: Props) {
 									xs: 'none',
 									md: 'flex'
 								},
+								padding: 1.5,
 								transition: "0.3s",
 								"&:hover":
 								{

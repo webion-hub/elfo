@@ -27,9 +27,8 @@ export default function TextAndDescriptionSideBar(props: TitleAndDescriptionCont
 			}}>
 			{props.data ? <><Chip variant="outlined" sx={{ width: '60%' }} size="small" label={props.data!} /></>: null}
 			<Typography
-				variant={isMd ? 'h2' : 'h3'}
+				variant="h6"
 				component='h3'
-				fontSize="11pt"
 				sx={{
 					fontWeight: "bold",
 					marginTop: "4px"

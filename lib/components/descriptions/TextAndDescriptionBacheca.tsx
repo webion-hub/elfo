@@ -1,4 +1,4 @@
-import { Typography, Stack, useTheme, useMediaQuery } from "@mui/material";
+import { Typography, Stack, useTheme, useMediaQuery, Chip } from "@mui/material";
 import { TitleAndDescriptionContent } from "./TitleAndDescriptionContent";
 import { useNextNavigator } from '@/hooks/useNextNavigator';
 
@@ -19,13 +19,10 @@ export default function TextAndDescriptionBacheca(props: TitleAndDescriptionCont
 						md: 0
 					}
 				},
-				width: {
-					xs: '100%',
-					md: '80%'
-				}
+				width: '100%'
 			}}>
 			<Typography
-				variant={isMd ? 'h2' : 'h3'}
+				variant={isMd ? 'h3' : 'h4'}
 				component='h1'
         fontSize="12pt"
 				sx={{ marginTop: theme => theme.mixins.toolbar.minHeight + 'px' }}

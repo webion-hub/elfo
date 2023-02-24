@@ -2,6 +2,7 @@ import { Paper, Stack } from '@mui/material';
 import * as React from 'react';
 import Img from '../images/Img';
 import TitleAndDescription from '../descriptions/TitleAndDescription';
+import { NextImg } from '../other/NextImg';
 
 
 export default function HeroSection() {
@@ -37,7 +38,7 @@ export default function HeroSection() {
 						md: 10
 					}
 				}} >
-				<Img
+				<NextImg
 					src="/assets/images/image 2.png"
 					alt="hero section image"
 					fill

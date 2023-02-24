@@ -1,10 +1,10 @@
-import { createTheme, GlobalStyles, ThemeProvider } from '@mui/material'
+import { createTheme, GlobalStyles, responsiveFontSizes, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 import ResponsiveAppBar from '@/lib/components/layout/appBar/ResponsiveAppBar'
 import Footer from '@/lib/components/layout/footer/Footer';
 import Head from 'next/head';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: 'rgb(37 99 235)',
@@ -54,15 +54,21 @@ const theme = createTheme({
    
   }
 });
+theme = responsiveFontSizes(theme)
 
 export default function App({ Component, pageProps }: AppProps) {
+
+  
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles 
         styles={{
           "body": {
             background: theme.palette.background.default,
-            fontFamily: theme.typography.fontFamily
+            fontFamily: theme.typography.fontFamily,
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh'
           },
           
 

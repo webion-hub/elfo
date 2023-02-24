@@ -1,7 +1,9 @@
 
 import { contentNotizie } from "@/lib/components/other/ContentsNotizie";
+import { changeText } from "@/pages";
 import { Pagination, Stack } from "@mui/material";
 import { SetStateAction, useState } from "react";
+import { TitleAndDescriptionContent } from "../descriptions/TitleAndDescriptionContent";
 import BigElfoCard from "./BigElfoCard/BigElfoCard";
 
 interface Contenuti {
@@ -11,11 +13,17 @@ interface Contenuti {
 export default function PaginationCard(props: Contenuti) {
 	const [page, setPage] = useState(1);
 
+
+
 	const elems = 10;
 	const pages = props.count
 
 	const index = (page - 1) * elems;
 	const data = [...contentNotizie].slice(index, index + elems)
+
+	const arr: TitleAndDescriptionContent[] = [];
+
+	changeText(arr, data)
 
 	const handleChange = (_e: any, p: number) => {
 		setPage(p)
@@ -26,16 +34,16 @@ export default function PaginationCard(props: Contenuti) {
 			direction="column"
 			alignItems={'center'}
 		>
-			{data.map((item, index) => (
+			{arr.map((item, index) => (
 				<BigElfoCard
 					key={index}
 					img={item.img}
 					data={item.data}
 					title={item.title}
-					text={item.title}
+					text={item.text}
 					sx={{ marginTop: 5 }}
 				/>
-		))}
+			))}
 			<Pagination
 				sx={{ marginTop: 10 }}
 				count={pages}

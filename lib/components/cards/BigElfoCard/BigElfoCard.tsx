@@ -20,7 +20,21 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 				maxWidth: "100%",
 				width: "100%",
 				borderRadius: '2%',
-				...props.sx
+				...props.sx,
+
+				transition: '0.3s',
+
+				"&:hover": {
+					transform: {
+						xs: 'none',
+						lg: 'translateX(-10px)'
+					},
+					boxShadow: theme => ({
+						xs: 'none',
+						lg: theme.shadows[10]
+					})
+
+				}
 			}}
 
 			border='1px solid #E6E4E4'
@@ -45,6 +59,7 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 			</CardMedia>
 			<Stack
 				direction="column"
+				justifyContent="space-between"
 			>
 				<CardContent>
 					<Chip label={props.data} />
@@ -70,13 +85,15 @@ export default function BigElfoCard(props: BigElfoCardProps) {
 						color="primary"
 						variant="contained"
 						sx={{
+							padding: 1.5,
 							transition: "0.3s",
 							"&:hover":
 							{
 								backgroundColor: 'blue',
 								boxShadow: theme => ({
 									xs: 'none',
-									lg: theme.shadows[10]})
+									lg: theme.shadows[10]
+								})
 							}
 						}}
 					>

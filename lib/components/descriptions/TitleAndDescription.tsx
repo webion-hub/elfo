@@ -10,9 +10,11 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 	const { clickNavigate } = useNextNavigator();
 
 
+
 	return (
 		<Stack
 			margin="auto"
+			spacing={2}
 			sx={{
 				'& > *': {
 					marginBottom: {
@@ -29,7 +31,7 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 			<Typography
 				variant={isMd ? 'h2' : 'h3'}
 				component='h2'
-				sx={{ 
+				sx={{
 					marginTop: theme => theme.mixins.toolbar.minHeight + 'px',
 					fontSize: {
 						xs: '35pt',
@@ -45,9 +47,19 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
 			>
 				{props.text}
 			</Typography>
-			{(props.action != null && props.path != null)  ? <Button endIcon={<FavoriteIcon />} sx={{ transition:"0.3s", "&:hover": {backgroundColor: 'blue', boxShadow: theme => ({
-							xs: 'none',
-							lg: theme.shadows[10]})}, width: '110px', height: "40px"}} color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
+			{(props.action != null && props.path != null) ? <Button endIcon={<FavoriteIcon />} 
+			sx={{
+				transition: "0.3s", 
+				"&:hover": {
+					backgroundColor: 'blue', 
+					boxShadow: theme => ({
+						xs: 'none',
+						lg: theme.shadows[10]
+					})
+				}, 
+				width: '180px', 
+				padding: 1.5
+			}} color="primary" variant="contained" onClick={clickNavigate(props.path!)}>  {props.action!} </Button> : null}
 		</Stack>
 	);
 }

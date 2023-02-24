@@ -15,6 +15,7 @@ export default function SideBar() {
 			width="100%"
 			height="100%"
 			sx={{
+				borderRadius: '1%',
 				'& > *': {
 					marginTop: '7px'
 				},
@@ -22,7 +23,7 @@ export default function SideBar() {
 					xs: 'none',
 					md: 'flex'
 				},
-				boxShadow: '2px 2px 3px 3px lightgray'
+				boxShadow: theme => theme.shadows[10]
 			}}
 
 		>

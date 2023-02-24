@@ -12,6 +12,3 @@
     transition: 0.3s;
 }
 
-.ResponsiveAppBar button:hover:after{
-    width: 100%;
-}

@@ -1,8 +1,11 @@
 import { IconButton, Stack, Typography } from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { useNextNavigator } from "@/hooks/useNextNavigator";
 
 export default function Social() {
+
+	const {clickNavigate} = useNextNavigator();
 	return (
 		<Stack>
 			<Typography
@@ -19,8 +22,8 @@ export default function Social() {
 					marginTop: '15px'
 				}}
 			>
-				<IconButton color="inherit" aria-label="facebookIcon"><FacebookIcon fontSize="large" /></IconButton>
-				<IconButton color="inherit"  arial-label="instagramIcon"><InstagramIcon fontSize="large" /></IconButton>
+				<IconButton color="inherit" aria-label="facebookIcon" onClick={clickNavigate("https://www.facebook.com/elfoavventure.pagina")}><FacebookIcon fontSize="large" /></IconButton>
+				<IconButton color="inherit"  arial-label="instagramIcon" onClick={clickNavigate("https://www.instagram.com/elfoavventure/")}><InstagramIcon fontSize="large" /></IconButton>
 			</Stack>
 		</Stack>
 	);
