@@ -16,7 +16,7 @@ export default function PaginationCard(props: Contenuti) {
 
 
 	const elems = 10;
-	const pages = props.count
+	const pages = props.count;
 
 	const index = (page - 1) * elems;
 	const data = [...contentNotizie].slice(index, index + elems)
