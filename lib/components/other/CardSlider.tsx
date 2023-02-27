@@ -31,8 +31,13 @@ export default function CardSlider() {
 	return (
 		<Stack>
 			<Carousel showDots={true} responsive={responsive} infinite={true} >
-				{arr.map((item) => (
-					<Box padding={4}><ElfoCard img={item.img} title={item.title} text={item.text} /></Box>
+				{arr.map((item, i) => (
+					<Box
+						key={i} 
+						padding={4}
+					>
+						<ElfoCard img={item.img} title={item.title} text={item.text} />
+					</Box>
 				))}
 			</Carousel>
 		</Stack>
