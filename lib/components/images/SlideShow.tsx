@@ -5,9 +5,9 @@ import ImageSlider from "./ImageSlider";
 
 
 export default function SlideShow() {
-	return (
-		<Box marginTop="50px">
-			<ImageSlider slides={arrImage} />
-		</Box>
-	);
+  return (
+    <Box marginTop="50px">
+      <ImageSlider slides={arrImage} />
+    </Box>
+  );
 }

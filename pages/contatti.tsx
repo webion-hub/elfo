@@ -3,9 +3,9 @@ import { Section } from '@/lib/components/layout/Section'
 
 
 export default function Contatti() {
-	return (
-		<Section>
-			<ContactUs></ContactUs>
-		</Section>
-	)
+  return (
+    <Section>
+      <ContactUs></ContactUs>
+    </Section>
+  )
 }

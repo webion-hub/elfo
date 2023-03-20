@@ -6,40 +6,40 @@ import TextAndDescriptionBacheca from "../../descriptions/TextAndDescriptionBach
 
 
 export default function SectionBacheca(props: Partial<TitleAndDescriptionContent>) {
-	return (
-		<Stack
-			sx={{
-				flexDirection: {
-					xs: 'column-reverse',
-					md: 'row'
-				},
-				width: '100%',
-				height: '100%',
-			}}>
-			{props.img ?
-				<Paper
-					sx={{
-						height: '400px',
-						position: 'relative',
-						width: '100%',
-						marginTop: 10,
-						borderRadius: '2%',
-						marginRight: 10
-					}} >
-					<Img
-						src={props.img!}
-						alt={props.title!}
-						fill
-						sx={{
-							objectFit: "cover",
-							borderRadius: '2%'
-						}} />
-				</Paper> : null
-			}
-			<TextAndDescriptionBacheca
-				title={props.title ?? ''}
-				text={props.text ?? ''}
-			/>
-		</Stack>
-	);
+  return (
+    <Stack
+      sx={{
+        flexDirection: {
+          xs: 'column-reverse',
+          md: 'row'
+        },
+        width: '100%',
+        height: '100%',
+      }}>
+      {props.img ?
+        <Paper
+          sx={{
+            height: '400px',
+            position: 'relative',
+            width: '100%',
+            marginTop: 10,
+            borderRadius: '2%',
+            marginRight: 10
+          }} >
+          <Img
+            src={props.img!}
+            alt={props.title!}
+            fill
+            sx={{
+              objectFit: "cover",
+              borderRadius: '2%'
+            }} />
+        </Paper> : null
+      }
+      <TextAndDescriptionBacheca
+        title={props.title ?? ''}
+        text={props.text ?? ''}
+      />
+    </Stack>
+  );
 }

@@ -9,37 +9,37 @@ import { TitleAndDescriptionContent } from "../descriptions/TitleAndDescriptionC
 import { contentSiti } from "./ContentSiti";
 
 const responsive = {
-	desktop: {
-		breakpoint: { max: 3000, min: 800 },
-		items: 3
-	},
-	tablet: {
-		breakpoint: { max: 800, min: 464 },
-		items: 2
-	},
-	mobile: {
-		breakpoint: { max: 464, min: 0 },
-		items: 1
-	}
+  desktop: {
+    breakpoint: { max: 3000, min: 800 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 800, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
 };
 
 
 export default function CardSlider() {
-	const arr: TitleAndDescriptionContent[] = []
+  const arr: TitleAndDescriptionContent[] = []
 
-	changeText(arr, contentSiti)
-	return (
-		<Stack>
-			<Carousel showDots={true} responsive={responsive} infinite={true} >
-				{arr.map((item, i) => (
-					<Box
-						key={i} 
-						padding={4}
-					>
-						<ElfoCard img={item.img} title={item.title} text={item.text} />
-					</Box>
-				))}
-			</Carousel>
-		</Stack>
-	);
+  changeText(arr, contentSiti)
+  return (
+    <Stack>
+      <Carousel showDots={true} responsive={responsive} infinite={true} >
+        {arr.map((item, i) => (
+          <Box
+            key={i} 
+            padding={4}
+          >
+            <ElfoCard img={item.img} title={item.title} text={item.text} />
+          </Box>
+        ))}
+      </Carousel>
+    </Stack>
+  );
 }
