@@ -5,8 +5,6 @@ import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleA
 import { NextImg } from "../other/NextImg";
 
 
-
-
 export default function AllSection(props: Partial<TitleAndDescriptionContent>) {
   return (
     <Stack

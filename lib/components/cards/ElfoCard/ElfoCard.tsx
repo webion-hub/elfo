@@ -7,69 +7,69 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function ElfoCard(props: TitleAndDescriptionContent) {
 
-	const theme = useTheme();
+  const theme = useTheme();
 
-	return (
-		<Card
-			sx={{
-				borderRadius: "20px",
-				'& > *':
-				{
-					backgroundColor: theme.palette.background.default
-				},
+  return (
+    <Card
+      sx={{
+        borderRadius: "20px",
+        '& > *':
+        {
+          backgroundColor: theme.palette.background.default
+        },
 
-				transition: '0.3s',
+        transition: '0.3s',
 
-				"&:hover": {
-						transform: {
-							xs: 'none',
-							lg: 'translateY(-10px)'
-						},
-						boxShadow: theme => ({
-							xs: 'none',
-							lg: theme.shadows[10]})
+        "&:hover": {
+            transform: {
+              xs: 'none',
+              lg: 'translateY(-10px)'
+            },
+            boxShadow: theme => ({
+              xs: 'none',
+              lg: theme.shadows[10]})
 
-				}
-			}}>
-			<CardMedia
-				component="img"
-				height="300"
-				image={props.img}
-				alt={props.title}
-			>
-			</CardMedia>
-			<CardContent sx={{
-				height: {
-					xs: 'fit-content',
-					md: 160
-				},
-				overflow: "hidden",
+        }
+      }}>
+      <CardMedia
+        component="img"
+        height="300"
+        image={props.img}
+        alt={props.title}
+      >
+      </CardMedia>
+      <CardContent sx={{
+        height: {
+          xs: 'fit-content',
+          md: 160
+        },
+        overflow: "hidden",
 
-			}}>
-				<Typography
-					gutterBottom
-					variant="h5"
-					component="h3"
-				>
-					{props.title}
-				</Typography>
-				<Typography
-					variant="body2"
-					color="text.secondary"
-				>
-					{props.text}
-				</Typography>
-			</CardContent>
-			<CardActions>
-				<Button
-					size="small"
-					variant="text"
-					color="inherit"
-				>
-					Scopri di più
-					<ArrowForwardIcon fontSize="small" />
-				</Button>
-			</CardActions>
-		</Card>
-	);
+      }}>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h3"
+        >
+          {props.title}
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+        >
+          {props.text}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          size="small"
+          variant="text"
+          color="inherit"
+        >
+          Scopri di più
+          <ArrowForwardIcon fontSize="small" />
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }

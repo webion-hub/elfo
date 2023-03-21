@@ -47,7 +47,8 @@ export default function TitleAndDescription(props: TitleAndDescriptionContent) {
       >
         {props.text}
       </Typography>
-      {(props.action != null && props.path != null) ? <Button endIcon={<FavoriteIcon />} 
+      {(props.action != null && props.path != null) 
+        ? <Button endIcon={<FavoriteIcon />} 
       sx={{
         transition: "0.3s", 
         "&:hover": {
