@@ -1,4 +1,4 @@
-import { changeText } from "@/pages";
+import { trimDescriptions } from "@/pages";
 import { Stack, Box } from "@mui/material";
 import { SetStateAction, useState } from "react";
 import Carousel from "react-multi-carousel";
@@ -25,9 +25,7 @@ const responsive = {
 
 
 export default function CardSlider() {
-  const arr: TitleAndDescriptionContent[] = []
-
-  changeText(arr, contentSiti)
+  const arr = trimDescriptions(contentSiti)
   return (
     <Stack>
       <Carousel showDots={true} responsive={responsive} infinite={true} >

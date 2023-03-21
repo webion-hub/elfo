@@ -1,21 +1,14 @@
 import BigElfoCard from '@/lib/components/cards/BigElfoCard/BigElfoCard'
-import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent';
 import { Section } from '@/lib/components/layout/Section'
 import { calendar } from '@/lib/components/other/ContentsCalendar'
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
-import { changeText } from '.';
+import { trimDescriptions } from '.';
 
 
 export default function Calendar() {
-
   const theme = useTheme();
-
   const isMd = useMediaQuery(theme.breakpoints.up('md'));
-
-  const arr : TitleAndDescriptionContent[] = []
-
-  changeText(arr, calendar)
-
+  const arr = trimDescriptions(calendar)
 
   return (
     <Section>

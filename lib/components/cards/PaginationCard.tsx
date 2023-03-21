@@ -1,6 +1,6 @@
 
 import { contentNotizie } from "@/lib/components/other/ContentsNotizie";
-import { changeText } from "@/pages";
+import { trimDescriptions } from "@/pages";
 import { Pagination, Stack } from "@mui/material";
 import { SetStateAction, useState } from "react";
 import { TitleAndDescriptionContent } from "../descriptions/TitleAndDescriptionContent";
@@ -21,9 +21,7 @@ export default function PaginationCard(props: Contenuti) {
   const index = (page - 1) * elems;
   const data = [...contentNotizie].slice(index, index + elems)
 
-  const arr: TitleAndDescriptionContent[] = [];
-
-  changeText(arr, data)
+  const arr = trimDescriptions(data);
 
   const handleChange = (_e: any, p: number) => {
     setPage(p)
