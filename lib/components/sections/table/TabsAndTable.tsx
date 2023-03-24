@@ -1,5 +1,6 @@
+import { GetLedgersResponse } from "@/pages/api/InterfaceLedger";
 import { Stack, Tab, Tabs } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MyTable from "./MyTable";
 
 
@@ -7,12 +8,26 @@ import MyTable from "./MyTable";
 export default function TabsAndTable() {
   const [tab, setTab] = useState(0);
 
-
-
   const handleChange = (e: any, p: number) => {
     setTab(p)
-
+    
   }
+
+  const [tabs, setTabs] = useState<number[]>([]);
+
+  useEffect(() => {
+    fetch('/api/ledgers')
+      .then(r => r.json())
+      .then((r: GetLedgersResponse) => {
+        setTabs(r
+          .ledgers
+          .map(l => l.year)
+          .reverse()
+        );
+      });
+  }, []);
+
+
 
   return (
     <Stack>
@@ -23,18 +38,13 @@ export default function TabsAndTable() {
         aria-label="secondary tabs example"
         onChange={handleChange}
         value={tab}
-        centered
+        //centered
       >
-        <Tab label="2023" />
-        <Tab label="2022" />
-        <Tab label="2021" />
-        <Tab label="2020" />
-        <Tab label="2019" />
-        <Tab label="2018" />
-        <Tab label="2017" />
-        <Tab label="2016" />
+        {tabs.map((t, i) => {
+          return <Tab label={t} key={i}/>
+        })}
       </Tabs>
-      <MyTable num={tab}></MyTable>
+      <MyTable num={tab} year={tabs[tab]}></MyTable>
     </Stack>
   );
 }
