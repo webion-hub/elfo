@@ -6,7 +6,6 @@ import { contentsBigCard } from '@/lib/components/cards/BigElfoCard/ContentsBigE
 import { contentCard } from '@/lib/components/cards/ElfoCard/ContentsCard'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import SideBar from '@/lib/components/layout/sideBar/SideBar'
-import { useEffect } from 'react'
 import CardSlider from '@/lib/components/other/CardSlider'
 import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent'
 
