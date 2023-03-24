@@ -6,10 +6,10 @@ import { GetLedgerResponse } from "../InterfaceLedger";
 export default function handler(req: NextApiRequest, res: NextApiResponse<GetLedgerResponse>) {
   const year = parseInt(req.query.year as string);
 
-  /*if (year < 2016 || year > 2023) {
-    res.status(404).send();
+  if (year < 2016 || year > 2023) {
+    res.status(404).send(null!);
     return;
-  }*/
+  }
 
   res.status(200).json({
     ledger: {

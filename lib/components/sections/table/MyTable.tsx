@@ -17,66 +17,66 @@ export default function MyTable(props: NTable) {
       .then((r: GetLedgerResponse) => {
         setMovements(r.ledger.movements);
       });
-
   }, [props.year]);
 
   
   return (
     <div 
       style={{
-        overflowX: 'auto'}}
+        overflowX: 'auto'
+      }}
       >
-    <TableContainer>
-      <Table
-        stickyHeader
-        size='medium'
-        aria-label="a dense table"
-      >
-        <TableHead>
-          <TableRow >
-          <TableCell>Data </TableCell>
-            <TableCell>Chi</TableCell>
-            <TableCell>Causale</TableCell>
-            <TableCell>Progetto/Note</TableCell>
-            <TableCell>Entrate</TableCell>
-            <TableCell>Uscite</TableCell>
-          </TableRow>
-        </TableHead>
+      <TableContainer>
+        <Table
+          stickyHeader
+          size='medium'
+          aria-label="a dense table"
+        >
+          <TableHead>
+            <TableRow>
+              <TableCell>Data</TableCell>
+              <TableCell>Chi</TableCell>
+              <TableCell>Causale</TableCell>
+              <TableCell>Progetto/Note</TableCell>
+              <TableCell>Entrate</TableCell>
+              <TableCell>Uscite</TableCell>
+            </TableRow>
+          </TableHead>
 
-        <TableBody>
-          {movements.map((items, index) => (
-            <TableRow
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              key={index}
-            >
-              <TableCell>{new Date(items.date).toLocaleDateString()}
-              </TableCell>
-              <TableCell>{items.from}</TableCell>
-              <TableCell>{items.reason}</TableCell>
-              <TableCell>{items.notes}</TableCell>
-              <TableCell
-                style={{color: items.type === 'in' 
+          <TableBody>
+            {movements.map((items, index) => (
+              <TableRow
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                key={index}
+              >
+                <TableCell>{new Date(items.date).toLocaleDateString()}
+                </TableCell>
+                <TableCell>{items.from}</TableCell>
+                <TableCell>{items.reason}</TableCell>
+                <TableCell>{items.notes}</TableCell>
+                <TableCell
+                  style={{color: items.type === 'in' 
+                    ? 'green' 
+                    : 'red'}}
+                >
+                  {items.type === 'in' 
+                    ? `${items.amount}€` 
+                    : ''}
+                </TableCell>
+                <TableCell 
+                  style={{color: items.type === 'in' 
                   ? 'green' 
                   : 'red'}}
-              >
-                {items.type === 'in' 
-                  ? `${items.amount}€` 
-                  : ''}
-              </TableCell>
-              <TableCell 
-                style={{color: items.type === 'in' 
-                ? 'green' 
-                : 'red'}}
-              >
-                {items.type === 'out' 
-                  ? `${items.amount}€` 
-                  : ''}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                >
+                  {items.type === 'out' 
+                    ? `${items.amount}€` 
+                    : ''}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </TableContainer>
-      </div>
+    </div>
   );
 }

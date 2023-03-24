@@ -7,13 +7,11 @@ import MyTable from "./MyTable";
 
 export default function TabsAndTable() {
   const [tab, setTab] = useState(0);
+  const [tabs, setTabs] = useState<number[]>([]);
 
   const handleChange = (e: any, p: number) => {
     setTab(p)
-    
   }
-
-  const [tabs, setTabs] = useState<number[]>([]);
 
   useEffect(() => {
     fetch('/api/ledgers')
@@ -38,7 +36,6 @@ export default function TabsAndTable() {
         aria-label="secondary tabs example"
         onChange={handleChange}
         value={tab}
-        //centered
       >
         {tabs.map((t, i) => {
           return <Tab label={t} key={i}/>
