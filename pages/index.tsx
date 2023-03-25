@@ -8,6 +8,10 @@ import { Box, Button, Stack, Typography } from '@mui/material'
 import SideBar from '@/lib/components/layout/sideBar/SideBar'
 import CardSlider from '@/lib/components/other/CardSlider'
 import { TitleAndDescriptionContent } from '@/lib/components/descriptions/TitleAndDescriptionContent'
+import { useEffect, useState } from 'react'
+import { GetArticlesResponse } from './api/articles'
+import { Article } from './api/articles'
+import { Adoption, GetAdoptionsResponse } from './api/adoptions'
 
 
 export const trimDescriptions = (arr: TitleAndDescriptionContent[]) => {
@@ -23,6 +27,24 @@ export const trimDescriptions = (arr: TitleAndDescriptionContent[]) => {
 export default function Home() {
 	const arr = trimDescriptions(contentsBigCard);
 	const arr2 = trimDescriptions(contentCard);
+	const [articles, setarticles] = useState<Article[]>([]);
+	const [adoptions, setadoptions] = useState<Adoption[]>([]);
+
+  useEffect(() => {
+	  fetch('/api/articles')
+	    .then(r => r.json())
+			.then((r: GetArticlesResponse) => {
+				setarticles(r.articles)
+			});
+  },[])
+
+	useEffect(() => {
+		fetch('/api/adoptions')
+		.then(r => r.json()).then((r: GetAdoptionsResponse) => {
+			setadoptions(r.adoptions)
+		});
+	}, [])
+
 	return (
 		<>
 			<Section
@@ -71,11 +93,11 @@ export default function Home() {
 						}}
 						paddingTop={10}
 						paddingBottom={10}>
-						{arr.map((cb, i) =>
+						{articles.map((cb, i) =>
 							<BigElfoCard
 								key={i}
-								img={cb.img}
-								data={cb.data}
+								img={cb.cover}
+								data={new Date(cb.publishDate).toLocaleDateString()}
 								title={cb.title}
 								text={cb.text}
 							/>
@@ -131,11 +153,11 @@ export default function Home() {
 							margin: 2,
 						}
 					}}>
-					{arr2.map((c, i) =>
+					{adoptions.map((c, i) =>
 						<ElfoCard
 							key={i}
-							img={c.img}
-							title={c.title}
+							img={c.cover}
+							title={c.name}
 							text={c.text}
 						/>
 					)}
