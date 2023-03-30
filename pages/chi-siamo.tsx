@@ -1,6 +1,6 @@
 import PageDetails from "@/lib/components/sections/PageDetails";
 import { Section } from "@/lib/components/layout/Section";
-
+import { arrImage } from "@/lib/components/images/ContentImage";
 
 
 export default function ChiSiamo() {
@@ -26,6 +26,7 @@ export default function ChiSiamo() {
         E siamo ancora sul sentiero, se vuoi anche col tuo aiuto...."
         action="dona"
         path="/bacheca"
+        i={arrImage}
       />
     </Section>
   );

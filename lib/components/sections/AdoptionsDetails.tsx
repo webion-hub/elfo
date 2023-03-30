@@ -1,11 +1,9 @@
-
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import {Stack } from "@mui/material";
 import AllSection from "./AllSection";
 import SlideShow from "../images/SlideShow";
 
-
-export default function PageDetails(props: TitleAndDescriptionContent) {
+export default function NewsDetails(props: TitleAndDescriptionContent) {
   const showSlideShow = Array.isArray(props.i) && props.i.length > 0;
   return (
     <Stack
@@ -24,8 +22,8 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
         path={props.path}
         i={props.i}
       />
-
-    {showSlideShow && (
+      
+      {showSlideShow && (
       <Stack
         sx={{
           justifyContent: 'center',
@@ -34,7 +32,7 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
           height: '100%',
         }}
       >
-        <SlideShow slides={props.i}></SlideShow>
+        <SlideShow slides={props.i || []}></SlideShow>
       </Stack>
       )}
     </Stack>

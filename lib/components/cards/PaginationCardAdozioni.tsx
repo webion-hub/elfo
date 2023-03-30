@@ -1,8 +1,8 @@
-
-import { Article, GetArticlesResponse } from "@/pages/api/articles";
+import { Adoption, GetAdoptionsResponse } from "@/pages/api/adoptions";
 import { Pagination, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import BigElfoCard from "./BigElfoCard/BigElfoCard";
+import CardAdozioni from "./CardAdozioni";
 
 
 interface PaginationCardProps {
@@ -13,7 +13,7 @@ interface PaginationCardProps {
 export default function PaginationCard(props: PaginationCardProps) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [adoptions, setAdoptions] = useState<Adoption[]>([]);
 
 
   const handleChange = (_e: any, p: number) => {
@@ -21,11 +21,11 @@ export default function PaginationCard(props: PaginationCardProps) {
   }
 	
 	useEffect(() => {
-	  fetch(`/api/articles?page=${page}&pageSize=${props.pageSize}`)
+	  fetch(`/api/adoptions?page=${page}&pageSize=${props.pageSize}`)
 	    .then(r => r.json())
-			.then((r: GetArticlesResponse) => {
+			.then((r: GetAdoptionsResponse) => {
         setTotalPages(r.totalPages);
-				setArticles(r.articles);
+				setAdoptions(r.adoptions);
 			});
   },[page])
 
@@ -34,12 +34,11 @@ export default function PaginationCard(props: PaginationCardProps) {
       direction="column"
       alignItems={'center'}
     >
-      {articles.map((item, index) => (
-        <BigElfoCard
+      {adoptions.map((item, index) => (
+        <CardAdozioni
           key={index}
           img={item.cover}
-          data={new Date(item.publishDate).toLocaleDateString()}
-          title={item.title}
+          title={item.name}
           text={item.text}
           sx={{ marginTop: 5 }}
         />

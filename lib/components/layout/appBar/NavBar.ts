@@ -28,6 +28,10 @@ export const navBarContents: NavBar[] =
       path: '/notizie'
     },
     {
+      name: 'Adozioni',
+      path: '/adozioni'
+    },
+    {
       name: 'Contatti',
       path: '/contatti'
     },

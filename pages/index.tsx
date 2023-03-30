@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { GetArticlesResponse } from './api/articles'
 import { Article } from './api/articles'
 import { Adoption, GetAdoptionsResponse } from './api/adoptions'
+import { useNextNavigator } from '@/hooks/useNextNavigator'
 
 
 export const trimDescriptions = (arr: TitleAndDescriptionContent[]) => {
@@ -23,15 +24,19 @@ export const trimDescriptions = (arr: TitleAndDescriptionContent[]) => {
   }));
 }
 
+interface NArticle {
+	id: number
+}
 
-export default function Home() {
+export default function Home(props: NArticle) {
 	const arr = trimDescriptions(contentsBigCard);
 	const arr2 = trimDescriptions(contentCard);
 	const [articles, setarticles] = useState<Article[]>([]);
 	const [adoptions, setadoptions] = useState<Adoption[]>([]);
+	const { clickNavigate } = useNextNavigator();
 
   useEffect(() => {
-	  fetch('/api/articles')
+	  fetch('/api/articles?page=1&pageSize=5')
 	    .then(r => r.json())
 			.then((r: GetArticlesResponse) => {
 				setarticles(r.articles)
@@ -39,7 +44,7 @@ export default function Home() {
   },[])
 
 	useEffect(() => {
-		fetch('/api/adoptions')
+		fetch('/api/adoptions?page=1&pageSize=5')
 		.then(r => r.json()).then((r: GetAdoptionsResponse) => {
 			setadoptions(r.adoptions)
 		});
@@ -100,6 +105,7 @@ export default function Home() {
 								data={new Date(cb.publishDate).toLocaleDateString()}
 								title={cb.title}
 								text={cb.text}
+								path={cb.id.toString()}
 							/>
 
 						)}
@@ -116,6 +122,7 @@ export default function Home() {
 
 					<Button
 						variant="contained"
+						onClick={clickNavigate(`/notizie`)}
 						sx={{ 
 							padding: 1.5,
 							border: "0px" ,
@@ -159,9 +166,37 @@ export default function Home() {
 							img={c.cover}
 							title={c.name}
 							text={c.text}
+							path={c.id.toString()}
 						/>
 					)}
 				</Stack>
+				<Box
+					width="100%"
+					sx={{
+						display: 'flex',
+						justifyContent: 'center'
+					}}
+				>
+
+					<Button
+						variant="contained"
+						onClick={clickNavigate(`/notizie`)}
+						sx={{ 
+							padding: 1.5,
+							border: "0px" ,
+							transition: "0.3s",
+							"&:hover":
+							{
+								backgroundColor: 'blue',
+								boxShadow: theme => ({
+									xs: 'none',
+									lg: theme.shadows[10]})
+							}
+					}}
+					>
+						continua a leggere
+					</Button>
+				</Box>
 			</Section>
 			<Section>
 				<Typography
@@ -178,3 +213,5 @@ export default function Home() {
 		</>
 	)
 }
+
+

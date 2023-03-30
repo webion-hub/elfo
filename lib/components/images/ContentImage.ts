@@ -23,5 +23,4 @@ export const arrImage: Images[] =
       path: '/assets/images/image3.jpg',
       alt: 'Non lo so'
     },
-  ]
-
+  ]  

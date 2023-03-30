@@ -49,8 +49,12 @@ export default function ImageSlider(props: ImagesSliderProps) {
     backgroundPosition: "center",
     backgroundSize: "cover",
     boxShadow: '2px 2px 3px 3px lightgray',
-    backgroundImage: ` url(${props.slides[currentIndex].path})`,
-    alt: `url(${props.slides[currentIndex].alt})`
+    backgroundImage: props.slides[currentIndex]?.path 
+      ? `url(${props.slides[currentIndex]?.path})` 
+      : "",
+    alt: props.slides[currentIndex]?.alt 
+      ? props.slides[currentIndex]?.alt 
+      : "",
   }
 
   const dotsContainerStyles = {

@@ -1,7 +1,8 @@
 import PaginationCard from '@/lib/components/cards/PaginationCard'
+import PaginationCardAdozioni from '@/lib/components/cards/PaginationCardAdozioni';
 import { Section } from '@/lib/components/layout/Section'
 import { Typography, useMediaQuery, useTheme } from '@mui/material'
-import { Article, GetArticlesResponse } from './api/articles';
+
 
 
 export default function Notizie() {
@@ -21,10 +22,9 @@ export default function Notizie() {
 					}
 				}}
 			>
-				Notizie
+				Adozioni
 			</Typography>
-			<PaginationCard pageSize={10}></PaginationCard>
+			<PaginationCardAdozioni pageSize={10}></PaginationCardAdozioni>
 		</Section>
 	)
 }
-
