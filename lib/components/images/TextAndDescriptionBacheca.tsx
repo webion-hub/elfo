@@ -1,5 +1,5 @@
 import { Typography, Stack, useTheme, useMediaQuery, Chip } from "@mui/material";
-import { TitleAndDescriptionContent } from "./TitleAndDescriptionContent";
+import { TitleAndDescriptionContent } from "../descriptions/TitleAndDescriptionContent";
 import { useNextNavigator } from '@/hooks/useNextNavigator';
 
 

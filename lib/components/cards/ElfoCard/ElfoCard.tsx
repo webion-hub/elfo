@@ -2,12 +2,14 @@
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, useTheme } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNextNavigator } from "@/hooks/useNextNavigator";
 
 
 
 export default function ElfoCard(props: TitleAndDescriptionContent) {
 
   const theme = useTheme();
+  const { clickNavigate } = useNextNavigator();
 
   return (
     <Card
@@ -65,6 +67,7 @@ export default function ElfoCard(props: TitleAndDescriptionContent) {
           size="small"
           variant="text"
           color="inherit"
+          onClick={clickNavigate(`/adoptions/${props.path}`)}
         >
           Scopri di più
           <ArrowForwardIcon fontSize="small" />

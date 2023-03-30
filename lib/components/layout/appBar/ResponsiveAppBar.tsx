@@ -2,7 +2,7 @@ import { useNextNavigator } from '@/hooks/useNextNavigator';
 import { navBarContents } from '@/lib/components/layout/appBar/NavBar';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ClickAwayListener, MenuItem, MenuList, Paper, Grow, Popper, Stack } from '@mui/material';
+import { ClickAwayListener, MenuItem, MenuList, Paper, Grow, Popper, Stack, ListItemIcon } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -19,6 +19,12 @@ import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import Img from '../../images/Img';
 import { NextImg } from '../../other/NextImg';
+import HomeIcon from '@mui/icons-material/Home';
+import PeopleIcon from '@mui/icons-material/People';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import CallIcon from '@mui/icons-material/Call';
+import MenuBookSharpIcon from '@mui/icons-material/MenuBookSharp';
 
 
 
@@ -83,12 +89,20 @@ export default function DrawerAppBar(props: Props) {
 
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: 400}}>
       <Divider />
       <List>
         {navBarContents.slice(0, 6).map((item, i) => (
           <ListItem key={item.name} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={clickNavigate(item.path)}>
+            <ListItemButton onClick={clickNavigate(item.path)}>
+              <ListItemIcon>
+                {i === 0 ? <HomeIcon /> : ''}
+                {i === 1 && <PeopleIcon />}
+                {i === 2 && <CalendarMonthIcon />}
+                {i === 3 && <NewspaperIcon />}
+                {i === 4 && <CallIcon />}
+                {i === 5 && <MenuBookSharpIcon />}
+              </ListItemIcon>
               <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
@@ -114,14 +128,11 @@ export default function DrawerAppBar(props: Props) {
             onClick={handleDrawerToggle}
             sx={{
               mr: 2,
-              display: {
-                xs: 'block',
-                md: 'none'
-              }
             }}
           >
             <MenuIcon />
           </IconButton>
+          
           <Stack
             direction="row"
             justifyContent={"space-between"}
@@ -134,7 +145,7 @@ export default function DrawerAppBar(props: Props) {
           >
             <Box
               width={190}
-              height={72}
+              height={45}
               position="relative"
             >
               <NextImg

@@ -1,7 +1,7 @@
 
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, Chip, Stack, SxProps, Theme } from "@mui/material";
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import { useNextNavigator } from "@/hooks/useNextNavigator";
 
@@ -64,7 +64,6 @@ export default function BigElfoCard(props: BigElfoCardProps) {
         justifyContent="space-between"
       >
         <CardContent>
-          <Chip label={props.data} />
           <Typography
             gutterBottom
             variant="h5"
@@ -82,26 +81,15 @@ export default function BigElfoCard(props: BigElfoCardProps) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button
-            size="small"
-            color="primary"
-            variant="contained"
-            onClick={clickNavigate(`/articles/${props.path}`)}
-            sx={{
-              padding: 1.5,
-              transition: "0.3s",
-              "&:hover":
-              {
-                backgroundColor: 'blue',
-                boxShadow: theme => ({
-                  xs: 'none',
-                  lg: theme.shadows[10]
-                })
-              }
-            }}
-          >
-            scopri di più
-          </Button>
+        <Button
+          size="small"
+          variant="text"
+          color="inherit"
+          onClick={clickNavigate(`/adoptions/${props.path}`)}
+        >
+          Scopri di più
+          <ArrowForwardIcon fontSize="small" />
+        </Button>
         </CardActions>
       </Stack>
     </Stack>
