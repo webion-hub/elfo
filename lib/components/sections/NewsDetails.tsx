@@ -5,7 +5,6 @@ import AllSection from "./AllSection";
 import SlideShow from "../images/SlideShow";
 
 export default function NewsDetails(props: TitleAndDescriptionContent) {
-  props.i == ''
   const showSlideShow = Array.isArray(props.i) && props.i.length > 0;
   return (
     <Stack

@@ -21,14 +21,12 @@ export interface Article {
 export default function handler(req: NextApiRequest, res: NextApiResponse<GetArticleResponse>) {
   const id = parseInt(req.query.id as string);
   const num_images = faker.datatype.number({min: 1, max: 5});
-  const imagelist = Array.from({
-    length: num_images
-    },() => {
-      return {
-        path: faker.image.image(),
-        alt: "Non lo so"
-      }
-    })
+  const imagelist = Array.from({length: num_images}, () => {
+    return {
+      path: faker.image.image(),
+      alt: "Non lo so"
+    }
+  })
   res.status(200).json({
     article: {
       id: id,

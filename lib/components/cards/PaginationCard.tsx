@@ -24,10 +24,10 @@ export default function PaginationCard(props: PaginationCardProps) {
 	  fetch(`/api/articles?page=${page}&pageSize=${props.pageSize}`)
 	    .then(r => r.json())
 			.then((r: GetArticlesResponse) => {
-        setTotalPages(r.totalPages);
-				setArticles(r.articles);
+    setTotalPages(r.totalPages);
+			  setArticles(r.articles);
 			});
-  },[page])
+  }, [page])
 
   return (
     <Stack

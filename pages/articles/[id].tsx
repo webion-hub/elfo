@@ -5,8 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Article } from "../api/articles/[id]";
 import { GetArticleResponse } from "../api/articles/[id]";
-import { Images } from "@/lib/components/images/Images";
-import ImageSlider from "@/lib/components/images/ImageSlider";
+
 
 
 export default function Articles() {

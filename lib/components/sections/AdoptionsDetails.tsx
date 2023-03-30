@@ -24,17 +24,17 @@ export default function NewsDetails(props: TitleAndDescriptionContent) {
       />
       
       {showSlideShow && (
-      <Stack
-        sx={{
-          justifyContent: 'center',
-          maxWidth: '100%',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <SlideShow slides={props.i || []}></SlideShow>
+        <Stack
+          sx={{
+            justifyContent: 'center',
+            maxWidth: '100%',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <SlideShow slides={props.i || []}></SlideShow>
+        </Stack>
+        )}
       </Stack>
-      )}
-    </Stack>
   )
 }

@@ -6,7 +6,6 @@ import SlideShow from "../images/SlideShow";
 
 
 export default function PageDetails(props: TitleAndDescriptionContent) {
-  const showSlideShow = Array.isArray(props.i) && props.i.length > 0;
   return (
     <Stack
       sx={{
@@ -25,7 +24,6 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
         i={props.i}
       />
 
-    {showSlideShow && (
       <Stack
         sx={{
           justifyContent: 'center',
@@ -34,9 +32,8 @@ export default function PageDetails(props: TitleAndDescriptionContent) {
           height: '100%',
         }}
       >
-        <SlideShow slides={props.i}></SlideShow>
+        <SlideShow slides={props.i || []}></SlideShow>
       </Stack>
-      )}
     </Stack>
   )
 }

@@ -29,8 +29,6 @@ interface NArticle {
 }
 
 export default function Home(props: NArticle) {
-	const arr = trimDescriptions(contentsBigCard);
-	const arr2 = trimDescriptions(contentCard);
 	const [articles, setarticles] = useState<Article[]>([]);
 	const [adoptions, setadoptions] = useState<Adoption[]>([]);
 	const { clickNavigate } = useNextNavigator();
@@ -38,16 +36,16 @@ export default function Home(props: NArticle) {
   useEffect(() => {
 	  fetch('/api/articles?page=1&pageSize=5')
 	    .then(r => r.json())
-			.then((r: GetArticlesResponse) => {
-				setarticles(r.articles)
+			  .then((r: GetArticlesResponse) => {
+				  setarticles(r.articles)
 			});
-  },[])
+  }, [])
 
 	useEffect(() => {
 		fetch('/api/adoptions?page=1&pageSize=5')
-		.then(r => r.json()).then((r: GetAdoptionsResponse) => {
-			setadoptions(r.adoptions)
-		});
+		  .then(r => r.json()).then((r: GetAdoptionsResponse) => {
+			  setadoptions(r.adoptions)
+		  });
 	}, [])
 
 	return (

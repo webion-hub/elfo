@@ -1,14 +1,12 @@
 
 import { TitleAndDescriptionContent } from "@/lib/components/descriptions/TitleAndDescriptionContent";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button, Chip, Stack, SxProps, Theme } from "@mui/material";
-import Link from "next/link";
-import { GetStaticPaths } from "next";
+
 
 import { useNextNavigator } from "@/hooks/useNextNavigator";
 
 interface BigElfoCardProps extends TitleAndDescriptionContent {
   readonly sx?: SxProps<Theme>;
-  //readonly onClick?: () => void;
 }
 
 export default function BigElfoCard(props: BigElfoCardProps) {
