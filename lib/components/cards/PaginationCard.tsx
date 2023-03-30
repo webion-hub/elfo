@@ -19,14 +19,14 @@ export default function PaginationCard(props: PaginationCardProps) {
   const handleChange = (_e: any, p: number) => {
     setPage(p)
   }
-	
-	useEffect(() => {
-	  fetch(`/api/articles?page=${page}&pageSize=${props.pageSize}`)
-	    .then(r => r.json())
-			.then((r: GetArticlesResponse) => {
-    setTotalPages(r.totalPages);
-			  setArticles(r.articles);
-			});
+  
+  useEffect(() => {
+    fetch(`/api/articles?page=${page}&pageSize=${props.pageSize}`)
+      .then(r => r.json())
+      .then((r: GetArticlesResponse) => {
+        setTotalPages(r.totalPages);
+        setArticles(r.articles);
+      });
   }, [page])
 
   return (
